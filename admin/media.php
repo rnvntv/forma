@@ -10,10 +10,14 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_FILES['file'])){
   $f=$_FILES['file'];
   if($f['error']===UPLOAD_ERR_OK){
     $ext = strtolower(pathinfo($f['name'], PATHINFO_EXTENSION));
+    $whitelist = ['jpg','jpeg','png','gif','webp','svg','pdf','txt','mp4','mov','webm'];
+    if(!in_array($ext,$whitelist,true)) { $msg='Недопустимый тип файла'; }
+    if($f['size']>20*1024*1024) { $msg='Файл слишком большой (макс. 20MB)'; }
     $name = bin2hex(random_bytes(6)).'.'.$ext;
     if(!is_dir($uploadDir)) mkdir($uploadDir,0775,true);
-    move_uploaded_file($f['tmp_name'],$uploadDir.$name);
-    $msg = 'Загружено: '.$base.$name;
+    if(empty($msg) && move_uploaded_file($f['tmp_name'],$uploadDir.$name)){
+      $msg = 'Загружено: '.$base.$name;
+    } else if(empty($msg)) { $msg='Не удалось сохранить файл'; }
   } else { $msg='Ошибка загрузки'; }
 }
 $files = array_values(array_filter(scandir($uploadDir), fn($x)=>$x!=='.'&&$x!=='..'));

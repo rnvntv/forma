@@ -14,7 +14,10 @@ $userId = $_SESSION['user_id'];
     <h1>Админ‑панель</h1>
     <div class="btns">
       <a class="btn" href="/admin/media.php">Медиа</a>
+      <?php $role = $pdo->query('SELECT role FROM users WHERE id='.(int)$userId)->fetchColumn(); if($role==='admin'): ?>
       <a class="btn" href="/admin/settings.php">Настройки</a>
+      <a class="btn" href="/admin/audit.php">Журнал</a>
+      <?php endif; ?>
       <a class="btn" href="/">Открыть сайт</a>
       <a class="btn" href="/admin/logout.php">Выйти</a>
     </div>

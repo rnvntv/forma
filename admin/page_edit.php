@@ -46,7 +46,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
       <label class="small">SEO description<input class="input" name="seo_desc" value="<?=e($page['seo_desc'])?>"></label>
     </div>
     <label class="small"><input type="checkbox" name="published" <?=$page['published']?'checked':''?>> Опубликована</label>
-    <div class="btns"><button class="btn btn--primary" type="submit">Сохранить</button></div>
+    <div class="btns">
+      <button class="btn btn--primary" type="submit">Сохранить</button>
+      <?php if($id): ?>
+      <a class="btn" href="/admin/page_remove.php?id=<?=$id?>" onclick="return confirm('Удалить страницу?')">Удалить</a>
+      <?php endif; ?>
+    </div>
   </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/tinymce@7.2.1/tinymce.min.js" referrerpolicy="origin"></script>

@@ -40,7 +40,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
       <textarea id="editor" class="textarea" name="content" rows="18"><?=(e($post['content']))?></textarea>
     </label>
     <label class="small"><input type="checkbox" name="published" <?=$post['published']?'checked':''?>> Опубликован</label>
-    <div class="btns"><button class="btn btn--primary" type="submit">Сохранить</button></div>
+    <div class="btns">
+      <button class="btn btn--primary" type="submit">Сохранить</button>
+      <?php if($id): ?>
+      <a class="btn" href="/admin/post_remove.php?id=<?=$id?>" onclick="return confirm('Удалить пост?')">Удалить</a>
+      <?php endif; ?>
+    </div>
   </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/tinymce@7.2.1/tinymce.min.js" referrerpolicy="origin"></script>

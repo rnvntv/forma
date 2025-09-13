@@ -17,14 +17,26 @@ if (trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')==='sitemap.xml')
 }
 $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 if ($uri==='') { $slug=''; } else { $slug=$uri; }
+$preview = isset($_GET['preview']);
+$token   = $_GET['token'] ?? '';
 $pdo = DB::conn();
 // Admin and assets bypass via .htaccess
 
 // Try page by slug (home slug empty)
-$stmt=$pdo->prepare("SELECT * FROM pages WHERE (CASE WHEN ?='' THEN slug='' ELSE slug=? END) AND published=1 LIMIT 1");
-$stmt->execute([$slug,$slug]);
+$where = 'slug = ?';
+if ($slug==='') $where = "slug = ''";
+$sql = "SELECT * FROM pages WHERE $where ";
+if (!$preview) { $sql .= 'AND published=1 '; }
+$sql .= 'LIMIT 1';
+$stmt=$pdo->prepare($sql);
+$stmt->execute($slug===''?[]:[$slug]);
 $page=$stmt->fetch();
 if ($page) {
+  // preview guard
+  if(!$page['published'] && $preview){
+    $secret = DB::conn()->query("SELECT value FROM settings WHERE `key`='preview_secret'")->fetchColumn();
+    if(!$secret || $token!==$secret){ http_response_code(403); exit('Forbidden'); }
+  }
   $title = $page['seo_title'] ?: $page['title'];
   $desc  = $page['seo_desc'] ?: '';
   $html  = $page['content'];
