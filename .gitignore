@@ -1,0 +1,18 @@
+# System
+.DS_Store
+
+# PHP runtime
+/vendor/
+/composer.lock
+
+# App secrets
+includes/config.php
+
+# Uploads
+uploads/
+
+# Node temp if added later
+node_modules/
+
+# Logs
+*.log

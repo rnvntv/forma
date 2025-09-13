@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Связаться — FORMA</title>
+  <meta name="description" content="Расскажите о задаче: сроки, бюджет, ссылки на референсы. Ответим в течение 1–2 рабочих дней.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="FORMA"><span class="logo__mark"></span>FORMA</a>
+      <nav class="nav" data-nav>
+        <a href="services.html">Услуги</a>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="process.html">Процесс</a>
+        <a href="pricing.html">Стоимость</a>
+        <a href="blog/">Блог</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html" class="btn btn--primary" style="height:36px;padding:0 12px" aria-current="page">Связаться</a>
+      </nav>
+      <button class="mobile-toggle" data-mobile-toggle aria-label="Меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0c0d0f" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="badge" data-reveal><span class="badge__dot"></span> Связаться</div>
+        <h1 style="margin-top:16px" data-reveal>Расскажите о проекте</h1>
+        <p class="lead" data-reveal>Опишите цели, сроки и ограничения. Приложите ссылки на референсы и текущий сайт. Ответим с предложением в течение 1–2 рабочих дней.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container grid-2">
+        <div class="card" data-reveal>
+          <h2>Бриф</h2>
+          <form action="mailto:hello@forma.studio" method="post" enctype="text/plain">
+            <div style="display:grid; gap: 12px;">
+              <input class="input" type="text" name="Имя" placeholder="Ваше имя" required>
+              <input class="input" type="email" name="Email" placeholder="Email" required>
+              <input class="input" type="text" name="Компания" placeholder="Компания (необязательно)">
+              <select class="input" name="Бюджет" required>
+                <option value="" disabled selected>Бюджет</option>
+                <option>до 200 000 ₽</option>
+                <option>200 000–500 000 ₽</option>
+                <option>500 000–1 000 000 ₽</option>
+                <option>1 000 000+ ₽</option>
+              </select>
+              <select class="input" name="Сроки" required>
+                <option value="" disabled selected>Сроки</option>
+                <option>2–4 недели</option>
+                <option>4–8 недель</option>
+                <option>2–3 месяца</option>
+                <option>3+ месяца</option>
+              </select>
+              <textarea class="textarea" name="Задача" placeholder="Кратко опишите задачу, ссылки на референсы и текущий сайт" required></textarea>
+              <div class="btns"><button class="btn btn--primary" type="submit">Отправить</button><a class="btn" href="mailto:hello@forma.studio">Написать на email</a></div>
+            </div>
+          </form>
+          <p class="small" style="margin-top:10px">Нажимая «Отправить», вы отправите письмо через почтовый клиент. Или напишите нам напрямую на hello@forma.studio.</p>
+        </div>
+        <div class="card" data-reveal>
+          <h2>Контакты</h2>
+          <p>Почта: <a href="mailto:hello@forma.studio">hello@forma.studio</a></p>
+          <p>Встречи: онлайн по договорённости. Москва / Санкт‑Петербург.</p>
+          <hr>
+          <h3>Частые вопросы</h3>
+          <p><strong>Поэтапная оплата?</strong> Да, работаем по спринтам.</p>
+          <p><strong>Договор и закрывающие?</strong> Да, предоставляем.</p>
+          <p><strong>Сроки?</strong> От 2 до 12 недель в зависимости от объёма.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="logo"><span class="logo__mark"></span>FORMA</div>
+          <p class="small" style="margin-top:8px">Студия разработки премиальных сайтов.</p>
+        </div>
+        <div>
+          <strong>Разделы</strong>
+          <ul class="list" style="margin-top:10px">
+            <li style="grid-template-columns:auto 1fr"><span></span><a href="services.html">Услуги</a></li>
+            <li style="grid-template-columns:auto 1fr"><span></span><a href="pricing.html">Стоимость</a></li>
+            <li style="grid-template-columns:auto 1fr"><span></span><a href="about.html">О нас</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Контакты</strong>
+          <p style="margin:10px 0 0"><a href="mailto:hello@forma.studio">hello@forma.studio</a></p>
+          <p class="small" style="margin-top:8px">© FORMA, 2015—2025</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

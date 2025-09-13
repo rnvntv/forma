@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Блог — FORMA</title>
+  <meta name="description" content="Практика дизайна и разработки: минимализм, стратегия, тексты и SEO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="logo" aria-label="FORMA"><span class="logo__mark"></span>FORMA</a>
+      <nav class="nav" data-nav>
+        <a href="../services.html">Услуги</a>
+        <a href="../portfolio.html">Портфолио</a>
+        <a href="../process.html">Процесс</a>
+        <a href="../pricing.html">Стоимость</a>
+        <a href="../blog/" aria-current="page">Блог</a>
+        <a href="../about.html">О нас</a>
+        <a href="../contact.html" class="btn btn--primary" style="height:36px;padding:0 12px">Связаться</a>
+      </nav>
+      <button class="mobile-toggle" data-mobile-toggle aria-label="Меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0c0d0f" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="badge" data-reveal><span class="badge__dot"></span> Блог</div>
+        <h1 style="margin-top:16px" data-reveal>Статьи о дизайне, стратегии и росте</h1>
+        <p class="lead" data-reveal>Коротко, по делу и с примерами. Пишем о том, как делать сайты, которые работают.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container grid-3">
+        <article class="card" data-reveal>
+          <h3><a href="minimalism.html" style="text-decoration:none;color:inherit">Почему минимализм продаёт</a></h3>
+          <p>Ясность, иерархия и дисциплина: как минимализм повышает конверсию.</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3><a href="brief.html" style="text-decoration:none;color:inherit">Идеальный бриф за 30 минут</a></h3>
+          <p>Структура брифа, вопросы и ссылки, которые экономят недели.</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3><a href="seo-foundation.html" style="text-decoration:none;color:inherit">SEO‑фундамент для нового сайта</a></h3>
+          <p>Чек‑лист: от мета‑тегов и robots до микроразметки и карт сайта.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="logo"><span class="logo__mark"></span>FORMA</div>
+          <p class="small" style="margin-top:8px">Студия разработки премиальных сайтов.</p>
+        </div>
+        <div>
+          <strong>Разделы</strong>
+          <ul class="list" style="margin-top:10px">
+            <li style="grid-template-columns:auto 1fr"><span></span><a href="../services.html">Услуги</a></li>
+            <li style="grid-template-columns:auto 1fr"><span></span><a href="../portfolio.html">Кейсы</a></li>
+            <li style="grid-template-columns:auto 1fr"><span></span><a href="../pricing.html">Стоимость</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Контакты</strong>
+          <p style="margin:10px 0 0"><a href="mailto:hello@forma.studio">hello@forma.studio</a></p>
+          <p class="small" style="margin-top:8px">© FORMA, 2015—2025</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
